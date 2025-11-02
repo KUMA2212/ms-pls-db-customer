@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: ms-pls-db-customer
+  profiles:
+    active: '${APPLICATION_PROFILE_KEY: LOCAL}'
+    include:
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/lcfDb?useSSL=false&serverTimezone=UTC
+    username: root
+    password: admin
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+server:
+  port: 8866
